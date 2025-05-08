@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Help User Guide</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            padding: 3rem 0;
+        }
+        
+        .guide-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .guide-section h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        .step-content {
+            flex-grow: 1;
+        }
+        
+        .step-image {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .tips {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .tips h4 {
+            margin-top: 0;
+            color: var(--secondary-color);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.75rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
+        mark {
+            background-color: #fff3cd;
+            padding: 2px;
+            border-radius: 2px;
+        }
+
+        .selected-item {
+            animation: highlight 1s ease-out;
+        }
+
+        @keyframes highlight {
+            0% { background-color: #fff3cd; }
+            100% { background-color: transparent; }
+        }
+
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-methods h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-methods a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-methods a:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Find Help Guide</div>
+            <nav>
+                <ul>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to the Find Help User Guide</h1>
+            <p>Everything you need to know to get the most out of our application. Learn how to use all the features with our step-by-step guides and tutorials.</p>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search the guide...">
+            </div>
+        </div>
+    </section>
+    
+    <main class="main-content container">
+        <section id="getting-started" class="guide-section">
+            <h2>Getting Started</h2>
+            <p>Follow these simple steps to begin using Find Help effectively.</p>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Download and Install</h3>
+                    <p>Download the application from your device's app store. Follow the installation instructions for your operating system.</p>
+                    <div class="tips">
+                        <h4>Tip</h4>
+                        <p>Make sure your device meets the minimum system requirements before installing.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Create Your Account</h3>
+                    <p>Open the application and sign up for a new account. You'll need to provide a valid email address and create a secure password.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Complete the Setup Wizard</h3>
+                    <p>The application will guide you through initial setup. Choose your preferences and customize basic settings to match your needs.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="features" class="guide-section">
+            <h2>Key Features</h2>
+            <p>Explore the features that make Find Help the perfect solution for your needs.</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card searchable-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>Dashboard Overview</h3>
+                    <p>Your personalized dashboard gives you quick access to all important metrics and recent activity at a glance.</p>
+                    <a href="#dashboard-guide">Learn more →</a>
+                </div>
+                
+                <div class="feature-card searchable-item">
+                    <div class="feature-icon">✏️</div>
+                    <h3>Profile Creation</h3>
+                    <p>Create and edit your profile(helper) with our intuitive editor that supports rich formatting.</p>
+                    <a href="#content-guide">Learn more →</a>
+                </div>
+                
+                <div class="feature-card searchable-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Search</h3>
+                    <p>Find exactly what you need with our powerful search.</p>
+                    <a href="#search-guide">Learn more →</a>
+                </div>
+                
+                <div class="feature-card searchable-item">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Sync</h3>
+                    <p>Access your content anywhere with automatic synchronization across all your devices.</p>
+                    <a href="#mobile-guide">Learn more →</a>
+                </div>
+                
+                <div class="feature-card searchable-item">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Security Features</h3>
+                    <p>Keep your data safe with two-factor authentication.</p>
+                    <a href="#security-guide">Learn more →</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="troubleshooting" class="guide-section">
+            <h2>Troubleshooting</h2>
+            <p>Solutions to common issues you might encounter while using the application.</p>
+            
+            <h3>Login Problems</h3>
+            <ul>
+                <li><strong>Forgot password:</strong> Use the password reset link on the login page.</li>
+                <li><strong>Account locked:</strong> Wait or contact support if you've had multiple failed attempts.</li>
+                <li><strong>Wrong credentials:</strong> Check for caps lock and ensure you're using the correct email.</li>
+            </ul>
+            
+            <h3>Performance Issues</h3>
+            <ul>
+                <li><strong>Slow loading:</strong> Check your internet connection and try closing other applications.</li>
+            </ul>
+            
+        </section>
+        
+        <section id="faq" class="guide-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <h3>General Questions</h3>
+            <div class="faq-item searchable-item">
+                <h4>Is there a free version of Find Help?</h4>
+                <p>Yes, we offer a free version with basic features.</p>
+            </div>
+            
+            <div class="faq-item searchable-item">
+                <h4>What platforms does Find Help support?</h4>
+                <p>Find Help is available for Windows, macOS, iOS, and Android.</p>
+            </div>
+            
+            <h3>Account Management</h3>
+            <div class="faq-item searchable-item">
+                <h4>How do I change my account email?</h4>
+                <p>Go to Account Settings → Personal Information → Email Address. You'll need to verify the new email address.</p>
+            </div>
+            
+            
+            
+        </section>
+        
+        <section id="contact" class="guide-section">
+            <h2>Contact Support</h2>
+            <p>Still need help? Our support team is ready to assist you.</p>
+            
+            <div class="contact-methods">
+                <h3>Email Support</h3>
+                <p><a href="mailto:support@findhelp.com">support@findhelp.com</a></p>
+
+                
+                <h3>Community Forum</h3>
+                <p>Get help from other users and share solutions on our <a href="#">community forum</a>.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+
+            </div>
+            <p>© 2025 Find Help. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
